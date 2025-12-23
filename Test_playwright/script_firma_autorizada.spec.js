@@ -4,7 +4,7 @@ import Tesseract from 'tesseract.js';
 const sharp = require('sharp');
 
 
- const rut = '18.684.711-3'
+ const rut = '18.684.711-3';
 
 test('Test firma autorizada rut', async ({ page }) => {
   await page.goto('http://172.30.30.2/ineg/nuevo/');
