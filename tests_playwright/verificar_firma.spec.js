@@ -117,6 +117,7 @@ async function verificarFirma(rut, page) {
     }
 }
 
+//BRANDON MARCONANANNSNANDA
 test('Procesamiento secuencial de firmas por RUT con Logging', async ({ page }) => {
     const timeoutPorRut = 30000; // 30 segundos por RUT
     const timeoutTotal = ruts.length * timeoutPorRut;
