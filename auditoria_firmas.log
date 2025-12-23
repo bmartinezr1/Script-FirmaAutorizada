@@ -9,3 +9,427 @@ Call log:
 Call log:
 [2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
  | Tiempo: 3.16s
+[2025-12-23T19:19:25.987Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:19:34.519Z] RUT: 18.684.711-3 | Resultado: Documento NO firmado | Tiempo: 8.53s
+[2025-12-23T19:19:48.419Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:19:52.066Z] RUT: 18.684.711-3 | Resultado: Documento NO firmado | Tiempo: 3.65s
+[2025-12-23T19:20:07.626Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:20:11.279Z] RUT: 18.684.711-3 | Resultado: Documento NO firmado | Tiempo: 3.65s
+[2025-12-23T19:22:28.974Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:22:33.486Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.51s
+[2025-12-23T19:26:05.177Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:26:09.813Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.64s
+[2025-12-23T19:26:09.816Z] --- Iniciando análisis para RUT: 19.234.567-8 ---
+[2025-12-23T19:26:13.411Z] RUT: 19.234.567-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.60s
+[2025-12-23T19:26:13.413Z] --- Iniciando análisis para RUT: 17.456.789-0 ---
+[2025-12-23T19:26:16.981Z] RUT: 17.456.789-0 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.57s
+[2025-12-23T19:26:16.985Z] --- Iniciando análisis para RUT: 20.123.456-7 ---
+[2025-12-23T19:26:20.546Z] RUT: 20.123.456-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:26:20.548Z] --- Iniciando análisis para RUT: 18.987.654-3 ---
+[2025-12-23T19:26:24.088Z] RUT: 18.987.654-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:26:24.091Z] --- Iniciando análisis para RUT: 19.876.543-2 ---
+[2025-12-23T19:26:27.642Z] RUT: 19.876.543-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.55s
+[2025-12-23T19:26:27.645Z] --- Iniciando análisis para RUT: 17.234.567-9 ---
+[2025-12-23T19:26:31.176Z] RUT: 17.234.567-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.53s
+[2025-12-23T19:26:31.182Z] --- Iniciando análisis para RUT: 18.345.678-1 ---
+[2025-12-23T19:26:34.742Z] RUT: 18.345.678-1 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:26:34.746Z] --- Iniciando análisis para RUT: 19.456.789-2 ---
+[2025-12-23T19:26:35.067Z] RUT: 19.456.789-2 | Resultado: RUT no registrado o error en la página: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#rut')[22m
+[2m    - locator resolved to <input id="rut" name="rut" type="text" maxlength="12" autocomplete="off" class="form-control" onkeypress="return rutOnly(this)"/>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div id="preloader"></div> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <div id="preloader"></div> intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 100ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+ | Tiempo: 0.32s
+[2025-12-23T19:26:35.074Z] --- Iniciando análisis para RUT: 20.567.890-3 ---
+[2025-12-23T19:26:35.088Z] RUT: 20.567.890-3 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.092Z] --- Iniciando análisis para RUT: 18.678.901-4 ---
+[2025-12-23T19:26:35.097Z] RUT: 18.678.901-4 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.100Z] --- Iniciando análisis para RUT: 19.789.012-5 ---
+[2025-12-23T19:26:35.111Z] RUT: 19.789.012-5 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.121Z] --- Iniciando análisis para RUT: 17.890.123-6 ---
+[2025-12-23T19:26:35.128Z] RUT: 17.890.123-6 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.133Z] --- Iniciando análisis para RUT: 18.901.234-7 ---
+[2025-12-23T19:26:35.140Z] RUT: 18.901.234-7 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.144Z] --- Iniciando análisis para RUT: 19.012.345-8 ---
+[2025-12-23T19:26:35.148Z] RUT: 19.012.345-8 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.153Z] --- Iniciando análisis para RUT: 20.123.457-5 ---
+[2025-12-23T19:26:35.157Z] RUT: 20.123.457-5 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.160Z] --- Iniciando análisis para RUT: 18.234.568-9 ---
+[2025-12-23T19:26:35.164Z] RUT: 18.234.568-9 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.168Z] --- Iniciando análisis para RUT: 19.345.679-0 ---
+[2025-12-23T19:26:35.174Z] RUT: 19.345.679-0 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.178Z] --- Iniciando análisis para RUT: 17.456.790-8 ---
+[2025-12-23T19:26:35.181Z] RUT: 17.456.790-8 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.187Z] --- Iniciando análisis para RUT: 18.567.891-1 ---
+[2025-12-23T19:26:35.191Z] RUT: 18.567.891-1 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.194Z] --- Iniciando análisis para RUT: 19.678.902-2 ---
+[2025-12-23T19:26:35.198Z] RUT: 19.678.902-2 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.204Z] --- Iniciando análisis para RUT: 20.789.013-3 ---
+[2025-12-23T19:26:35.208Z] RUT: 20.789.013-3 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.210Z] --- Iniciando análisis para RUT: 18.890.124-4 ---
+[2025-12-23T19:26:35.213Z] RUT: 18.890.124-4 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.218Z] --- Iniciando análisis para RUT: 19.901.235-5 ---
+[2025-12-23T19:26:35.224Z] RUT: 19.901.235-5 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.227Z] --- Iniciando análisis para RUT: 17.012.346-6 ---
+[2025-12-23T19:26:35.231Z] RUT: 17.012.346-6 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.235Z] --- Iniciando análisis para RUT: 18.123.457-7 ---
+[2025-12-23T19:26:35.240Z] RUT: 18.123.457-7 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.243Z] --- Iniciando análisis para RUT: 19.234.568-8 ---
+[2025-12-23T19:26:35.246Z] RUT: 19.234.568-8 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:26:35.251Z] --- Iniciando análisis para RUT: 20.345.679-9 ---
+[2025-12-23T19:26:35.257Z] RUT: 20.345.679-9 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.262Z] --- Iniciando análisis para RUT: 18.456.790-0 ---
+[2025-12-23T19:26:35.276Z] RUT: 18.456.790-0 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:26:35.285Z] --- Iniciando análisis para RUT: 19.567.891-1 ---
+[2025-12-23T19:28:21.297Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:28:25.776Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.48s
+[2025-12-23T19:28:25.779Z] --- Iniciando análisis para RUT: 19.234.567-8 ---
+[2025-12-23T19:28:29.321Z] RUT: 19.234.567-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:28:29.324Z] --- Iniciando análisis para RUT: 17.456.789-0 ---
+[2025-12-23T19:28:32.865Z] RUT: 17.456.789-0 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:28:32.869Z] --- Iniciando análisis para RUT: 20.123.456-7 ---
+[2025-12-23T19:28:36.427Z] RUT: 20.123.456-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:28:36.430Z] --- Iniciando análisis para RUT: 18.987.654-3 ---
+[2025-12-23T19:28:39.954Z] RUT: 18.987.654-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.52s
+[2025-12-23T19:28:39.959Z] --- Iniciando análisis para RUT: 19.876.543-2 ---
+[2025-12-23T19:28:43.535Z] RUT: 19.876.543-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.58s
+[2025-12-23T19:28:43.539Z] --- Iniciando análisis para RUT: 17.234.567-9 ---
+[2025-12-23T19:28:47.060Z] RUT: 17.234.567-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.52s
+[2025-12-23T19:28:47.064Z] --- Iniciando análisis para RUT: 18.345.678-1 ---
+[2025-12-23T19:28:50.629Z] RUT: 18.345.678-1 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:28:50.631Z] --- Iniciando análisis para RUT: 19.456.789-2 ---
+[2025-12-23T19:28:54.144Z] RUT: 19.456.789-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.51s
+[2025-12-23T19:28:54.148Z] --- Iniciando análisis para RUT: 20.567.890-3 ---
+[2025-12-23T19:28:57.690Z] RUT: 20.567.890-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:28:57.693Z] --- Iniciando análisis para RUT: 18.678.901-4 ---
+[2025-12-23T19:29:01.334Z] RUT: 18.678.901-4 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.64s
+[2025-12-23T19:29:01.343Z] --- Iniciando análisis para RUT: 19.789.012-5 ---
+[2025-12-23T19:29:04.854Z] RUT: 19.789.012-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.51s
+[2025-12-23T19:29:04.857Z] --- Iniciando análisis para RUT: 17.890.123-6 ---
+[2025-12-23T19:29:08.402Z] RUT: 17.890.123-6 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:29:08.407Z] --- Iniciando análisis para RUT: 18.901.234-7 ---
+[2025-12-23T19:29:11.965Z] RUT: 18.901.234-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:29:11.967Z] --- Iniciando análisis para RUT: 19.012.345-8 ---
+[2025-12-23T19:29:15.513Z] RUT: 19.012.345-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.55s
+[2025-12-23T19:29:15.517Z] --- Iniciando análisis para RUT: 20.123.457-5 ---
+[2025-12-23T19:29:19.055Z] RUT: 20.123.457-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.54s
+[2025-12-23T19:29:19.060Z] --- Iniciando análisis para RUT: 18.234.568-9 ---
+[2025-12-23T19:29:23.836Z] RUT: 18.234.568-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 4.78s
+[2025-12-23T19:29:23.839Z] --- Iniciando análisis para RUT: 19.345.679-0 ---
+[2025-12-23T19:29:27.834Z] RUT: 19.345.679-0 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 4.00s
+[2025-12-23T19:29:27.839Z] --- Iniciando análisis para RUT: 17.456.790-8 ---
+[2025-12-23T19:29:31.389Z] RUT: 17.456.790-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.55s
+[2025-12-23T19:29:31.394Z] --- Iniciando análisis para RUT: 18.567.891-1 ---
+[2025-12-23T19:29:35.131Z] RUT: 18.567.891-1 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.74s
+[2025-12-23T19:29:35.134Z] --- Iniciando análisis para RUT: 19.678.902-2 ---
+[2025-12-23T19:29:38.766Z] RUT: 19.678.902-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.63s
+[2025-12-23T19:29:38.769Z] --- Iniciando análisis para RUT: 20.789.013-3 ---
+[2025-12-23T19:29:42.280Z] RUT: 20.789.013-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.51s
+[2025-12-23T19:29:42.282Z] --- Iniciando análisis para RUT: 18.890.124-4 ---
+[2025-12-23T19:29:45.814Z] RUT: 18.890.124-4 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.53s
+[2025-12-23T19:29:45.817Z] --- Iniciando análisis para RUT: 19.901.235-5 ---
+[2025-12-23T19:29:49.477Z] RUT: 19.901.235-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.66s
+[2025-12-23T19:29:49.481Z] --- Iniciando análisis para RUT: 17.012.346-6 ---
+[2025-12-23T19:29:53.040Z] RUT: 17.012.346-6 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.56s
+[2025-12-23T19:29:53.042Z] --- Iniciando análisis para RUT: 18.123.457-7 ---
+[2025-12-23T19:29:54.622Z] RUT: 18.123.457-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Test ended.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 1.58s
+[2025-12-23T19:29:54.635Z] --- Iniciando análisis para RUT: 19.234.568-8 ---
+[2025-12-23T19:29:54.641Z] RUT: 19.234.568-8 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.647Z] --- Iniciando análisis para RUT: 20.345.679-9 ---
+[2025-12-23T19:29:54.658Z] RUT: 20.345.679-9 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.663Z] --- Iniciando análisis para RUT: 18.456.790-0 ---
+[2025-12-23T19:29:54.670Z] RUT: 18.456.790-0 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.674Z] --- Iniciando análisis para RUT: 19.567.891-1 ---
+[2025-12-23T19:29:54.679Z] RUT: 19.567.891-1 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.683Z] --- Iniciando análisis para RUT: 17.678.902-2 ---
+[2025-12-23T19:29:54.689Z] RUT: 17.678.902-2 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.692Z] --- Iniciando análisis para RUT: 18.789.013-3 ---
+[2025-12-23T19:29:54.697Z] RUT: 18.789.013-3 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.702Z] --- Iniciando análisis para RUT: 19.890.124-4 ---
+[2025-12-23T19:29:54.707Z] RUT: 19.890.124-4 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.710Z] --- Iniciando análisis para RUT: 20.901.235-5 ---
+[2025-12-23T19:29:54.713Z] RUT: 20.901.235-5 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:29:54.716Z] --- Iniciando análisis para RUT: 18.012.346-6 ---
+[2025-12-23T19:29:54.721Z] RUT: 18.012.346-6 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.725Z] --- Iniciando análisis para RUT: 19.123.457-7 ---
+[2025-12-23T19:29:54.728Z] RUT: 19.123.457-7 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:29:54.731Z] --- Iniciando análisis para RUT: 17.234.568-8 ---
+[2025-12-23T19:29:54.736Z] RUT: 17.234.568-8 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.742Z] --- Iniciando análisis para RUT: 18.345.679-9 ---
+[2025-12-23T19:29:54.746Z] RUT: 18.345.679-9 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:29:54.749Z] --- Iniciando análisis para RUT: 19.456.790-0 ---
+[2025-12-23T19:29:54.754Z] RUT: 19.456.790-0 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.758Z] --- Iniciando análisis para RUT: 20.567.891-1 ---
+[2025-12-23T19:29:54.761Z] RUT: 20.567.891-1 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:29:54.764Z] --- Iniciando análisis para RUT: 18.678.902-2 ---
+[2025-12-23T19:29:54.769Z] RUT: 18.678.902-2 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.773Z] --- Iniciando análisis para RUT: 19.789.013-3 ---
+[2025-12-23T19:29:54.777Z] RUT: 19.789.013-3 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.00s
+[2025-12-23T19:29:54.780Z] --- Iniciando análisis para RUT: 17.890.124-4 ---
+[2025-12-23T19:29:54.787Z] RUT: 17.890.124-4 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:29:54.791Z] --- Iniciando análisis para RUT: 18.901.235-5 ---
+[2025-12-23T19:29:54.802Z] RUT: 18.901.235-5 | Resultado: RUT no registrado o error en la página: page.goto: Target page, context or browser has been closed | Tiempo: 0.01s
+[2025-12-23T19:31:55.077Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:31:59.594Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.52s
+[2025-12-23T19:31:59.598Z] --- Iniciando análisis para RUT: 19.234.567-8 ---
+[2025-12-23T19:32:02.641Z] RUT: 19.234.567-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:32:02.643Z] --- Iniciando análisis para RUT: 17.456.789-0 ---
+[2025-12-23T19:32:05.718Z] RUT: 17.456.789-0 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.08s
+[2025-12-23T19:32:05.720Z] --- Iniciando análisis para RUT: 20.123.456-7 ---
+[2025-12-23T19:32:08.771Z] RUT: 20.123.456-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.05s
+[2025-12-23T19:32:08.775Z] --- Iniciando análisis para RUT: 18.987.654-3 ---
+[2025-12-23T19:32:11.830Z] RUT: 18.987.654-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.06s
+[2025-12-23T19:32:11.838Z] --- Iniciando análisis para RUT: 19.876.543-2 ---
+[2025-12-23T19:32:14.920Z] RUT: 19.876.543-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.08s
+[2025-12-23T19:32:14.923Z] --- Iniciando análisis para RUT: 17.234.567-9 ---
+[2025-12-23T19:32:17.974Z] RUT: 17.234.567-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.05s
+[2025-12-23T19:32:17.977Z] --- Iniciando análisis para RUT: 18.345.678-1 ---
+[2025-12-23T19:32:21.151Z] RUT: 18.345.678-1 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.17s
+[2025-12-23T19:32:21.156Z] --- Iniciando análisis para RUT: 19.456.789-2 ---
+[2025-12-23T19:32:24.180Z] RUT: 19.456.789-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.02s
+[2025-12-23T19:32:24.184Z] --- Iniciando análisis para RUT: 20.567.890-3 ---
+[2025-12-23T19:32:27.224Z] RUT: 20.567.890-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:32:27.229Z] --- Iniciando análisis para RUT: 18.678.901-4 ---
+[2025-12-23T19:32:30.251Z] RUT: 18.678.901-4 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.02s
+[2025-12-23T19:32:30.254Z] --- Iniciando análisis para RUT: 19.789.012-5 ---
+[2025-12-23T19:32:33.264Z] RUT: 19.789.012-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.01s
+[2025-12-23T19:32:33.268Z] --- Iniciando análisis para RUT: 17.890.123-6 ---
+[2025-12-23T19:32:36.259Z] RUT: 17.890.123-6 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 2.99s
+[2025-12-23T19:32:36.261Z] --- Iniciando análisis para RUT: 18.901.234-7 ---
+[2025-12-23T19:32:39.284Z] RUT: 18.901.234-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.02s
+[2025-12-23T19:32:39.289Z] --- Iniciando análisis para RUT: 19.012.345-8 ---
+[2025-12-23T19:32:42.301Z] RUT: 19.012.345-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.01s
+[2025-12-23T19:32:42.305Z] --- Iniciando análisis para RUT: 20.123.457-5 ---
+[2025-12-23T19:32:45.324Z] RUT: 20.123.457-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.02s
+[2025-12-23T19:32:45.329Z] --- Iniciando análisis para RUT: 18.234.568-9 ---
+[2025-12-23T19:32:48.389Z] RUT: 18.234.568-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.06s
+[2025-12-23T19:32:48.393Z] --- Iniciando análisis para RUT: 19.345.679-0 ---
+[2025-12-23T19:32:51.509Z] RUT: 19.345.679-0 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.12s
+[2025-12-23T19:32:51.513Z] --- Iniciando análisis para RUT: 17.456.790-8 ---
+[2025-12-23T19:32:54.552Z] RUT: 17.456.790-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:32:54.560Z] --- Iniciando análisis para RUT: 18.567.891-1 ---
+[2025-12-23T19:32:57.826Z] RUT: 18.567.891-1 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.27s
+[2025-12-23T19:32:57.829Z] --- Iniciando análisis para RUT: 19.678.902-2 ---
+[2025-12-23T19:33:00.959Z] RUT: 19.678.902-2 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.13s
+[2025-12-23T19:33:00.963Z] --- Iniciando análisis para RUT: 20.789.013-3 ---
+[2025-12-23T19:33:04.002Z] RUT: 20.789.013-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:33:04.005Z] --- Iniciando análisis para RUT: 18.890.124-4 ---
+[2025-12-23T19:33:07.039Z] RUT: 18.890.124-4 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.03s
+[2025-12-23T19:33:07.042Z] --- Iniciando análisis para RUT: 19.901.235-5 ---
+[2025-12-23T19:33:10.188Z] RUT: 19.901.235-5 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+[2m    - waiting for" http://172.30.30.2/ineg/nuevo/index.php" navigation to finish...[22m
+[2m    - navigated to "http://172.30.30.2/ineg/nuevo/index.php"[22m
+ | Tiempo: 3.15s
+[2025-12-23T19:33:10.192Z] --- Iniciando análisis para RUT: 17.012.346-6 ---
+[2025-12-23T19:33:13.228Z] RUT: 17.012.346-6 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:33:13.231Z] --- Iniciando análisis para RUT: 18.123.457-7 ---
+[2025-12-23T19:33:16.250Z] RUT: 18.123.457-7 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.02s
+[2025-12-23T19:33:16.255Z] --- Iniciando análisis para RUT: 19.234.568-8 ---
+[2025-12-23T19:33:19.291Z] RUT: 19.234.568-8 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.04s
+[2025-12-23T19:33:19.294Z] --- Iniciando análisis para RUT: 20.345.679-9 ---
+[2025-12-23T19:33:22.296Z] RUT: 20.345.679-9 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.00s

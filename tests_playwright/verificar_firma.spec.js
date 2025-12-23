@@ -1,99 +1,132 @@
 // @ts-check
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import Tesseract from 'tesseract.js';
 import sharp from 'sharp';
 import fs from 'fs';
 
-// Lista de RUTs a analizar
-const ruts = [
-    '18.684.711-3', // RUT válido
-    '18.684.721-3', // RUT inválido/no registrado
-    // Agrega más RUTs aquí para procesar en lote de forma secuencial
-];
-
 const logFile = 'auditoria_firmas.log';
+const estados = {
+    autorizado: 'autorizado',
+    noFirmado: 'no_firmado',
+    noRegistro: 'no_registro',
+    falloOcr: 'fallo_ocr',
+};
 
-/**
- * Función para registrar eventos generales en el archivo de log
- * @param {string} mensaje 
- */
-function registrarEvento(mensaje) {
-    const fecha = new Date().toLocaleString();
-    fs.appendFileSync(logFile, `[${fecha}] ${mensaje}\n`);
-}
+let ruts = [];
+const rutInput = process.env.RUTS;
 
-/**
- * Función para registrar eventos de RUT en el archivo de log
- * @param {string} rut 
- * @param {string} mensaje 
- * @param {number} tiempoMs 
- */
-function registrarLog(rut, mensaje, tiempoMs) {
-    const tiempoSeg = (tiempoMs / 1000).toFixed(2);
-    registrarEvento(`RUT: ${rut} | Resultado: ${mensaje} | Tiempo: ${tiempoSeg}s`);
-}
-
-test('Procesamiento secuencial de firmas por RUT con Logging', async ({ page }) => {
-    // Inicializar archivo de log con cabecera si es nuevo
-    if (!fs.existsSync(logFile)) {
-        fs.writeFileSync(logFile, '--- Inicio de Auditoría de Firmas ---\n');
+if (rutInput) {
+    ruts = rutInput.split(',').map((rut) => rut.trim()).filter(Boolean);
+} else {
+    // Cargar RUTs desde archivo JSON si no se proporciona variable de entorno
+    try {
+        const rutFile = await fs.promises.readFile('ruts_masivos.json', 'utf-8');
+        const rutData = JSON.parse(rutFile);
+        ruts = rutData.ruts || [];
+    } catch (error) {
+        console.warn('No se pudo cargar ruts_masivos.json, usando RUT por defecto');
+        ruts = ['18.684.711-3'];
     }
+}
 
-    for (const rut of ruts) {
-        const startTime = Date.now();
-        registrarEvento(`--- Iniciando análisis para RUT: ${rut} ---`);
+const fsp = fs.promises;
 
+function normalizarRut(rut) {
+    return rut.replace(/\./g, '').replace(/-/g, '');
+}
+
+function ts() {
+    return new Date().toISOString();
+}
+
+async function registrarEvento(mensaje) {
+    await fsp.appendFile(logFile, `[${ts()}] ${mensaje}\n`);
+}
+
+async function registrarLog(rut, mensaje, tiempoMs) {
+    const tiempoSeg = (tiempoMs / 1000).toFixed(2);
+    await registrarEvento(`RUT: ${rut} | Resultado: ${mensaje} | Tiempo: ${tiempoSeg}s`);
+}
+
+async function prepararLog() {
+    const existe = fs.existsSync(logFile);
+    if (!existe) {
+        await fsp.writeFile(logFile, '--- Inicio de Auditoría de Firmas ---\n');
+    }
+}
+
+async function limpiarArchivos(...rutas) {
+    for (const ruta of rutas) {
+        if (fs.existsSync(ruta)) {
+            await fsp.unlink(ruta).catch(() => { });
+        }
+    }
+}
+
+/**
+ * Verifica la autorización de firma para un RUT y devuelve un estado estructurado.
+ * @param {string} rut
+ * @param {import('@playwright/test').Page} page
+ */
+async function verificarFirma(rut, page) {
+    const inicio = Date.now();
+    await registrarEvento(`--- Iniciando análisis para RUT: ${rut} ---`);
+
+    try {
         await page.goto('http://172.30.30.2/ineg/nuevo/');
         await page.locator('#rut').click();
         await page.locator('#rut').fill(rut);
+        await page.getByRole('button', { name: 'Ingresar' }).click();
 
-        let resultado = '';
+        await page.getByRole('link', { name: 'Compromiso de Confidencialidad' }).dblclick({ timeout: 2000 });
+        await page.waitForTimeout(1500);
+    } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        const errorMsg = `RUT no registrado o error en la página: ${message}`;
+        await page.keyboard.press('Escape').catch(() => { });
+        await registrarLog(rut, errorMsg, Date.now() - inicio);
+        return { estado: estados.noRegistro, detalle: errorMsg };
+    }
 
-        try {
-            await page.getByRole('button', { name: 'Ingresar' }).click();
+    const idRUT = normalizarRut(rut);
+    const imagePath = `imagen_${idRUT}.png`;
+    const imageProcPath = `imagen_proc_${idRUT}.png`;
 
-            // Timeout de 2 segundos para detectar fallos rápidamente
-            await page.getByRole('link', { name: 'Compromiso de Confidencialidad' }).dblclick({ timeout: 2000 });
-            await page.waitForTimeout(500);
-        } catch (error) {
-            const message = error instanceof Error ? error.message : String(error);
-            const errorMsg = `RUT no registrado o error en la página: ${message}`;
-            await page.keyboard.press('Escape').catch(() => { });
+    try {
+        const image = await page.getByRole('rowgroup').getByRole('img');
+        await image.screenshot({ path: imagePath });
 
-            registrarLog(rut, errorMsg, Date.now() - startTime);
-            continue;
-        }
+        await sharp(imagePath).greyscale().toFile(imageProcPath);
 
-        const idRUT = rut.replace(/\./g, '').replace(/-/g, '');
-        const imagePath = `imagen_${idRUT}.png`;
-        const imageProcPath = `imagen_proc_${idRUT}.png`;
+        const result = await Tesseract.recognize(imageProcPath, 'spa+eng');
+        const detectedText = result.data.text.trim();
+        const tieneFirma = detectedText.includes('FIRMA AUTORIZADA') && detectedText.includes('SERVICIO DE SALUD THNO');
 
-        try {
-            const image = await page.getByRole('rowgroup').getByRole('img');
-            await image.screenshot({ path: imagePath });
+        const estado = tieneFirma ? estados.autorizado : estados.noFirmado;
+        const mensaje = tieneFirma ? 'Documento FIRMADO y autorizado' : 'Documento NO firmado';
+        await registrarLog(rut, mensaje, Date.now() - inicio);
 
-            await sharp(imagePath)
-                .greyscale()
-                .toFile(imageProcPath);
+        return { estado, detalle: mensaje };
+    } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        const errorFatal = `Falló procesamiento OCR: ${message}`;
+        await registrarLog(rut, errorFatal, Date.now() - inicio);
+        return { estado: estados.falloOcr, detalle: errorFatal };
+    } finally {
+        await limpiarArchivos(imagePath, imageProcPath);
+    }
+}
 
-            const result = await Tesseract.recognize(imageProcPath, 'spa+eng');
-            const detectedText = result.data.text.trim();
+test('Procesamiento secuencial de firmas por RUT con Logging', async ({ page }) => {
+    const timeoutPorRut = 30000; // 30 segundos por RUT
+    const timeoutTotal = ruts.length * timeoutPorRut;
+    test.setTimeout(timeoutTotal);
+    console.log(`Configurado timeout de ${(timeoutTotal / 1000 / 60).toFixed(1)} minutos para ${ruts.length} RUTs`);
+    
+    await prepararLog();
 
-            if (detectedText.includes('FIRMA AUTORIZADA') && detectedText.includes('SERVICIO DE SALUD THNO')) {
-                resultado = 'Documento FIRMADO y autorizado';
-            } else {
-                resultado = 'Documento NO firmado';
-            }
-
-            registrarLog(rut, resultado, Date.now() - startTime);
-
-            if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
-            if (fs.existsSync(imageProcPath)) fs.unlinkSync(imageProcPath);
-
-        } catch (error) {
-            const message = error instanceof Error ? error.message : String(error);
-            const errorFatal = `Falló procesamiento OCR: ${message}`;
-            registrarLog(rut, errorFatal, Date.now() - startTime);
-        }
+    for (const rut of ruts) {
+        const resultado = await verificarFirma(rut, page);
+        console.log(`[${rut}] estado=${resultado.estado} detalle=${resultado.detalle}`);
     }
 });
