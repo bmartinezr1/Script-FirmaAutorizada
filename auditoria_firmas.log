@@ -1,0 +1,11 @@
+--- Inicio de Auditoría de Firmas ---
+[23-12-2025, 1:03:30 p. m.] RUT: 18.684.711-3 | Resultado: Documento NO firmado | Tiempo: 4.30s
+[23-12-2025, 1:03:34 p. m.] RUT: 18.684.721-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.29s
+[23-12-2025, 1:03:49 p. m.] RUT: 18.684.711-3 | Resultado: Documento NO firmado | Tiempo: 5.72s
+[23-12-2025, 1:03:53 p. m.] RUT: 18.684.721-3 | Resultado: RUT no registrado o error en la página: locator.dblclick: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
+ | Tiempo: 3.16s
