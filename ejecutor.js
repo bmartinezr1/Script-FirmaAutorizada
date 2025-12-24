@@ -6,8 +6,9 @@
  * Puede ser llamado desde otros lenguajes (PHP, Python, etc.)
  * 
  * Uso:
- *   node ejecutor.js "18.684.711-3"
- *   node ejecutor.js "18.684.711-3,19.234.567-8"
+ *   node ejecutor.js                        (usa ruts_masivos.json)
+ *   node ejecutor.js "18.684.711-3"         (usa RUT del parámetro)
+ *   node ejecutor.js "18.684.711-3,19.234.567-8"  (múltiples RUTs)
  */
 
 import { chromium } from 'playwright';
@@ -17,7 +18,7 @@ import fs from 'fs';
 async function main() {
     // Toma el primer argumento del comando (lo que viene después del nombre del script)
     const args = process.argv.slice(2);
-    const rutInput = args[0] || process.env.RUTS;
+    const rutInput = args[0];
     
     let ruts = [];
     
@@ -25,14 +26,14 @@ async function main() {
     if (rutInput) {
         ruts = rutInput.split(',').map((rut) => rut.trim()).filter(Boolean);
     } else {
-        // Si no, intentamos cargar desde el archivo JSON
+        // Si no, cargamos desde el archivo JSON
         ruts = await cargarRuts();
     }
     
     // Validación básica: si no hay RUTs, no tiene sentido continuar
     if (ruts.length === 0) {
         console.error(JSON.stringify({ 
-            error: 'No se proporcionaron RUTs para validar',
+            error: 'No se proporcionaron RUTs para validar. Verifica ruts_masivos.json o pasa RUTs como parámetro.',
             uso: 'node ejecutor.js "RUT1,RUT2,..."' 
         }));
         process.exit(1);

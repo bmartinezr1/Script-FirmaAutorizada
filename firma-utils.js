@@ -143,12 +143,12 @@ export async function verificarFirma(rut, page) {
             await new Promise((resolve) => {
                 img.onload = resolve;
                 img.onerror = resolve;
-                setTimeout(resolve, 2000); // Timeout de seguridad
+                setTimeout(resolve, 3000); // Timeout de seguridad aumentado
             });
         });
         
-        // Esperamos un poco más por si acaso
-        await page.waitForTimeout(300);
+        // Esperamos más tiempo para asegurar que la imagen esté completamente cargada
+        await page.waitForTimeout(800);
 
         // Capturamos screenshot de la imagen
         await image.screenshot({ path: imagePath });
@@ -193,23 +193,18 @@ export async function estaFirmado(rut, page) {
 }
 
 /**
- * Carga RUTs desde archivo JSON o variable de entorno
- * Prioridad: parámetro > archivo JSON > fallback
- * @param {string} [rutInput] - Variable de entorno con RUTs separados por coma
+ * Carga RUTs desde archivo JSON
  * @returns {Promise<string[]>}
  */
-export async function cargarRuts(rutInput) {
-    if (rutInput) {
-        return rutInput.split(',').map((rut) => rut.trim()).filter(Boolean);
-    }
-    
+export async function cargarRuts() {
     // Intentamos leer el archivo JSON
     try {
-        const rutFile = await fs.promises.readFile('ruts_masivos.json', 'utf-8');
+        const rutFile = await fsp.readFile('ruts_masivos.json', 'utf-8');
         const rutData = JSON.parse(rutFile);
         return rutData.ruts || [];
     } catch (error) {
-        // Si falla, retornamos un RUT de prueba
-        return ['18.684.711-3'];
+        console.error('Error al cargar ruts_masivos.json:', error.message);
+        // Si falla, retornamos array vacío
+        return [];
     }
 }

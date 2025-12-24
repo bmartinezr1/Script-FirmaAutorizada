@@ -3,11 +3,10 @@ import { test } from '@playwright/test';
 import { verificarFirma, cargarRuts } from './firma-utils.js';
 
 let ruts = [];
-const rutInput = process.env.RUTS;
 
 // Cargamos los RUTs antes de ejecutar los tests
 // Esto se ejecuta en "top-level await" (característica de ES modules)
-ruts = await cargarRuts(rutInput);
+ruts = await cargarRuts();
 
 // Estos hooks están vacíos pero los dejamos por si acaso se necesitan después
 test.beforeAll(async () => {});
