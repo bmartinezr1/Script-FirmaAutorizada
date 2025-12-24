@@ -1,0 +1,6 @@
+# Archivos temporales generados durante la ejecución
+imagen_*.png
+imagen_proc_*.png
+
+# Reportes (si se habilitan en el futuro)
+reporte_firmas.json
