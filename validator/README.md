@@ -19,28 +19,37 @@ firma-validator/
 
 ## 🚀 Uso
 
-### **1. Instalación de dependencias** (en la raíz del proyecto):
+### **1. Instalación de dependencias** (solo la primera vez):
 
+Desde la raíz del proyecto:
 ```bash
 npm install
 ```
 
 ### **2. Ejecución del script:**
 
-#### Opción A: Desde archivo JSON
+#### ✅ OPCIÓN RECOMENDADA - Desde la carpeta validator:
 ```bash
-npx playwright test firma-validator/test.spec.js
+cd validator
+npx playwright test test.spec.js --headed
 ```
 
-#### Opción B: Con variable de entorno
+#### Opción B - Desde la raíz (si actualizas playwright.config.js):
 ```bash
+npx playwright test validator/test.spec.js --headed
+```
+
+#### Con variable de entorno (múltiples RUTs):
+```bash
+cd validator
 $env:RUTS="18.684.711-3,19.234.567-8"
-npx playwright test firma-validator/test.spec.js
+npx playwright test test.spec.js
 ```
 
 #### Modo headless (sin interfaz gráfica):
 ```bash
-npx playwright test firma-validator/test.spec.js --headed=false
+cd validator
+npx playwright test test.spec.js
 ```
 
 ## 📊 Salida
