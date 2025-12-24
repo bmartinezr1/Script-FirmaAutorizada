@@ -1,0 +1,21 @@
+{
+  "name": "firma-autorizada",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Validación de firmas autorizadas",
+  "main": "ejecutor.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.40.0",
+    "tesseract.js": "^5.0.0",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
