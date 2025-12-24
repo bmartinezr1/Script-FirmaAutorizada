@@ -433,3 +433,17 @@ Call log:
 Call log:
 [2m  - waiting for getByRole('link', { name: 'Compromiso de Confidencialidad' })[22m
  | Tiempo: 3.00s
+[2025-12-23T19:48:40.537Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:48:45.419Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.88s
+[2025-12-23T19:49:34.765Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:49:41.996Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 7.23s
+[2025-12-23T19:53:01.774Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:53:08.047Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 6.27s
+[2025-12-23T19:55:02.343Z] Configurado timeout de 0.5 minutos para 1 RUTs
+[2025-12-23T19:55:02.347Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:55:06.762Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.42s
+[2025-12-23T19:55:34.953Z] Configurado timeout de 1.0 minutos para 2 RUTs
+[2025-12-23T19:55:34.959Z] --- Iniciando análisis para RUT: 18.684.711-3 ---
+[2025-12-23T19:55:39.602Z] RUT: 18.684.711-3 | Resultado: Documento FIRMADO y autorizado | Tiempo: 4.64s
+[2025-12-23T19:55:39.606Z] --- Iniciando análisis para RUT: 18.684.711-2 ---
+[2025-12-23T19:55:41.668Z] RUT: 18.684.711-2 | Resultado: RUT no existe en el sistema: Rut incorrecto | Tiempo: 2.06s

@@ -4,11 +4,11 @@ import Tesseract from 'tesseract.js';
 import sharp from 'sharp';
 import fs from 'fs';
 
-const logFile = 'auditoria_firmas.log';
 const estados = {
     autorizado: 'autorizado',
     noFirmado: 'no_firmado',
     noRegistro: 'no_registro',
+    noExiste: 'no_existe',
     falloOcr: 'fallo_ocr',
 };
 
@@ -24,7 +24,6 @@ if (rutInput) {
         const rutData = JSON.parse(rutFile);
         ruts = rutData.ruts || [];
     } catch (error) {
-        console.warn('No se pudo cargar ruts_masivos.json, usando RUT por defecto');
         ruts = ['18.684.711-3'];
     }
 }
@@ -33,26 +32,6 @@ const fsp = fs.promises;
 
 function normalizarRut(rut) {
     return rut.replace(/\./g, '').replace(/-/g, '');
-}
-
-function ts() {
-    return new Date().toISOString();
-}
-
-async function registrarEvento(mensaje) {
-    await fsp.appendFile(logFile, `[${ts()}] ${mensaje}\n`);
-}
-
-async function registrarLog(rut, mensaje, tiempoMs) {
-    const tiempoSeg = (tiempoMs / 1000).toFixed(2);
-    await registrarEvento(`RUT: ${rut} | Resultado: ${mensaje} | Tiempo: ${tiempoSeg}s`);
-}
-
-async function prepararLog() {
-    const existe = fs.existsSync(logFile);
-    if (!existe) {
-        await fsp.writeFile(logFile, '--- Inicio de Auditoría de Firmas ---\n');
-    }
 }
 
 async function limpiarArchivos(...rutas) {
@@ -69,8 +48,13 @@ async function limpiarArchivos(...rutas) {
  * @param {import('@playwright/test').Page} page
  */
 async function verificarFirma(rut, page) {
-    const inicio = Date.now();
-    await registrarEvento(`--- Iniciando análisis para RUT: ${rut} ---`);
+    // Manejador de diálogos (alertas) para detectar RUTs no existentes
+    let alertMessage = '';
+    const dialogHandler = async (dialog) => {
+        alertMessage = dialog.message();
+        await dialog.accept();
+    };
+    page.on('dialog', dialogHandler);
 
     try {
         await page.goto('http://172.30.30.2/ineg/nuevo/');
@@ -78,13 +62,30 @@ async function verificarFirma(rut, page) {
         await page.locator('#rut').fill(rut);
         await page.getByRole('button', { name: 'Ingresar' }).click();
 
+        // Esperar a ver si aparece una alerta
+        await page.waitForTimeout(1000);
+
+        if (alertMessage) {
+            const mensaje = `NO EXISTE (${alertMessage})`;
+            console.log(`RUT: ${rut} | Resultado: ${mensaje}`);
+            page.off('dialog', dialogHandler);
+            return { estado: estados.noExiste, detalle: `RUT no existe en el sistema: ${alertMessage}` };
+        }
+
         await page.getByRole('link', { name: 'Compromiso de Confidencialidad' }).dblclick({ timeout: 2000 });
-        await page.waitForTimeout(1500);
+        await page.waitForTimeout(500);
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        const errorMsg = `RUT no registrado o error en la página: ${message}`;
+        if (message.includes('timeout')) {
+            console.log(`RUT: ${rut} | Resultado: ERROR (Tiempo excedido al buscar el compromiso)`);
+        } else {
+            console.error(`Error inesperado para RUT ${rut}: ${message}`);
+        }
         await page.keyboard.press('Escape').catch(() => { });
-        await registrarLog(rut, errorMsg, Date.now() - inicio);
+        page.off('dialog', dialogHandler);
+        const errorMsg = message.includes('timeout') 
+            ? 'Tiempo excedido al buscar el compromiso de confidencialidad'
+            : `RUT no registrado o error en la página: ${message}`;
         return { estado: estados.noRegistro, detalle: errorMsg };
     }
 
@@ -94,6 +95,21 @@ async function verificarFirma(rut, page) {
 
     try {
         const image = await page.getByRole('rowgroup').getByRole('img');
+        await image.waitFor({ state: 'visible', timeout: 5000 });
+
+        // Asegurarse de que la imagen terminó de cargar completamente
+        await image.evaluate(async (img) => {
+            if (!(img instanceof HTMLImageElement)) return;
+            const isLoaded = () => img.complete && img.naturalWidth > 0;
+            if (isLoaded()) return;
+            await new Promise((resolve) => {
+                img.onload = resolve;
+                img.onerror = resolve;
+                setTimeout(resolve, 3000);
+            });
+        });
+        await page.waitForTimeout(1000);
+
         await image.screenshot({ path: imagePath });
 
         await sharp(imagePath).greyscale().toFile(imageProcPath);
@@ -103,17 +119,18 @@ async function verificarFirma(rut, page) {
         const tieneFirma = detectedText.includes('FIRMA AUTORIZADA') && detectedText.includes('SERVICIO DE SALUD THNO');
 
         const estado = tieneFirma ? estados.autorizado : estados.noFirmado;
-        const mensaje = tieneFirma ? 'Documento FIRMADO y autorizado' : 'Documento NO firmado';
-        await registrarLog(rut, mensaje, Date.now() - inicio);
+        const mensaje = tieneFirma ? 'Documento FIRMADO y autorizado' : 'Documento NO firmado (Imagen encontrada pero no detectó firma)';
+        console.log(`RUT: ${rut} | Resultado: ${mensaje}`);
 
         return { estado, detalle: mensaje };
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         const errorFatal = `Falló procesamiento OCR: ${message}`;
-        await registrarLog(rut, errorFatal, Date.now() - inicio);
+        console.error(`Error inesperado para RUT ${rut}: ${message}`);
         return { estado: estados.falloOcr, detalle: errorFatal };
     } finally {
         await limpiarArchivos(imagePath, imageProcPath);
+        page.off('dialog', dialogHandler);
     }
 }
 
@@ -122,12 +139,8 @@ test('Procesamiento secuencial de firmas por RUT con Logging', async ({ page }) 
     const timeoutPorRut = 30000; // 30 segundos por RUT
     const timeoutTotal = ruts.length * timeoutPorRut;
     test.setTimeout(timeoutTotal);
-    console.log(`Configurado timeout de ${(timeoutTotal / 1000 / 60).toFixed(1)} minutos para ${ruts.length} RUTs`);
-    
-    await prepararLog();
 
     for (const rut of ruts) {
         const resultado = await verificarFirma(rut, page);
-        console.log(`[${rut}] estado=${resultado.estado} detalle=${resultado.detalle}`);
     }
 });
